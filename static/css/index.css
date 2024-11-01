@@ -150,7 +150,7 @@ body{
     position: fixed; /* 固定在螢幕上方 */
     top: 0;
     left: -350px; /* 初始位置完全在螢幕外 */
-    width: 50vh; /* 設定資訊面板的寬度 */
+    width: 600px; /* 設定資訊面板的寬度 */
     height: 100%; /* 高度為螢幕的高度 */
     background-color: #FFF7F0; /* 半透明白色背景 */
     border-right: 1px solid #ccc; /* 右邊框線 */
