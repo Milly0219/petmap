@@ -249,6 +249,11 @@ def delete_lost_pet():
     finally:
         cursor.close()
 
+@app.route('/adopt')
+def adopt():
+    return render_template("adopt.html")
+
+
 
 
 # 啟動應用
