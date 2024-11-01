@@ -6,13 +6,8 @@ from sqlalchemy.orm import sessionmaker
 import pandas as pd
 import mysql.connector
 import os
-import openpyxl
 from mysql.connector import connect
 from werkzeug.utils import secure_filename
-import logging
-
-# 配置 logging
-logging.basicConfig(level=logging.DEBUG)
 
 # 定義 MySQL 連接參數
 DB_USER = 'root'          # 例如 'root'
@@ -80,7 +75,7 @@ def import_data():
 
     # 讀取 Excel 檔案並清理資料
     file_path = 'static/tables/pet_lost.xlsx'
-    excel_data = pd.read_excel(file_path,engine='openpyxl')
+    excel_data = pd.read_excel(file_path)
     excel_data.columns = ['chip_number', 'pet_name', 'pet_type', 'gender', 'breed', 'color', 'appearance', 
                           'features', 'lost_date', 'lost_location', 'latitude', 'longitude', 
                           'owner_name', 'contact_phone', 'email', 'photo_url']
@@ -162,7 +157,6 @@ location_data = {}
 
 @app.route('/templates', methods=['POST', 'GET'])
 def templates():
-    logging.debug("templates route reached")  # 確認請求是否到達
     global location_data
     if request.method == 'POST':
         # 檢查是否為 JSON 請求（只包含經緯度）
@@ -181,9 +175,6 @@ def templates():
             latitude = location_data.get('latitude')
             longitude = location_data.get('longitude')
             
-            # 打印收到的表單資料
-            print(f"Received data: {pet_name}, {lost_date}, {lost_location}, {features}, {contact_phone}")
-
             # 正確獲取上傳的圖片檔案
             picture = request.files.get('picture')
             if picture and allowed_file(picture.filename):
@@ -212,17 +203,11 @@ def templates():
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """
                 values = (pet_name, lost_date, lost_location, features, latitude, longitude, contact_phone, photo_url)
-                try:
-                    cursor.execute(sql, values)
-                    db.commit()
-                    print("資料成功插入。")
-                except Exception as e:
-                    db.rollback()
-                    print(f"資料插入失敗: {e}")
-                finally:
-                    cursor.close()
+                cursor.execute(sql, values)
+                db.commit()
+                cursor.close()
 
-                #print("資料連線成功")
+                print("資料連線成功")
             return render_template("template.html")
     
    
