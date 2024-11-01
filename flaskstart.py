@@ -210,9 +210,7 @@ def templates():
                 print("資料連線成功")
             return render_template("template.html")
     
-   
-        
-        
+
     return render_template("template.html")
 
 
