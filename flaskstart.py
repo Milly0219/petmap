@@ -253,8 +253,13 @@ def delete_lost_pet():
 def adopt():
     return render_template("adopt.html")
 
+@app.route('/myself')
+def myself():
+    return render_template("myself.html")
 
-
+@app.route('/nodify')
+def nodify():
+    return render_template("nodify.html")
 
 # 啟動應用
 if __name__ == '__main__':
