@@ -287,8 +287,7 @@ def nodify():
             print(f"更新資料庫失敗: {e}")
             return jsonify({"error": f"更新失敗: {e}"}), 500
 
-    return render_template(
-        'nodify.html',
+    return render_template('nodify.html',
         pet_name=session.get('pet_name'),
         lost_time=session.get('lost_date'),
         lost_place=session.get('lost_location'),
@@ -298,6 +297,13 @@ def nodify():
         photo_url=session.get('photo_url'),
     )
 
+@app.route('/map', methods=['GET', 'POST'])
+def map():
+    return render_template('index.html')
+
+@app.route('/adopt', methods=['GET', 'POST'])
+def adopt():
+    return render_template('adopt.html')
 
 @app.route('/api/pet-lost', methods=['GET'])
 def get_lost_pets():
