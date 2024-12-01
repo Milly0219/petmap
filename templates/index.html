@@ -209,6 +209,14 @@ function toggleMarkers(markersArray, shouldShow) {
     }
     
         function initMap() {
+                fetch('/get_data')
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log(data);
+                  })
+                  .catch(error => console.error('Error:', error));
+
+                
             // 自訂地圖樣式，隱藏所有不需要的地標 
             const mapStyle = [
                 {
@@ -607,9 +615,7 @@ google.maps.event.addListener(marker, 'click', () => {
     <a href="/ad-post">
         <button title="Add New" class="button" >+</button>
     </a>
-    /* From Uiverse.io by xopc333 */ 
-    <a href="/adopt">
-    <button class="back-btn">
+<button class="back-btn">
   <div class="button-box">
     <span class="button-elem">
       <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
@@ -627,7 +633,7 @@ google.maps.event.addListener(marker, 'click', () => {
     </span>
   </div>
 </button>
-</a>
+
     
 </body>
 </html>

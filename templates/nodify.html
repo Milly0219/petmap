@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/nav.css">
-    <link rel="stylesheet" href="../static/css/nodify.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/nodify.css" rel="stylesheet">
+    <link href="../static/css/nav.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/globals.css" />
     <link rel="stylesheet" href="../static/css/styleguide.css" />
   </head>
@@ -11,12 +12,12 @@
     <div class="nodify">
       <div class="div">
         <div class="overlap">
-          <img class="shape" src="../static/img/shape-2.png" />
+          <img class="shape" src="static/img/shape-2.png" />
           <footer class="footer">
             <p class="text-wrapper">Copyright © 破鏡寵緣 讓愛延續 2024. All rights reserved.</p>
             <div class="overlap-group">
               <div class="text-wrapper-2">rekindlepetlove@gmail.com</div>
-              <img class="mail" src="../static/img/mail.svg" />
+              <img class="mail" src="static/img/mail.svg" />
             </div>
             <div class="AR-VR"><div class="text-wrapper-3">AR/VR</div></div>
             <div class="AR-VR-wrapper"><div class="text-wrapper-3">寵物配對</div></div>
@@ -34,9 +35,9 @@
                 </p>
                 <p class="text-i"><span class="span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;讓愛延續</span></p>
               </div>
-              <img class="logo" src="../static/img/logo-1.png" />
+              <img class="logo" src="static/img/logo-1.png" />
             </div>
-            <img class="vector" src="../static/img/vector-6.svg" />
+            <img class="vector" src="static/img/vector-6.svg" />
           </footer>
         </div>
         <div class="text-wrapper-5">通知中心</div>
@@ -44,33 +45,31 @@
         <div class="nav">
           <div class="overlap-2">
             <div class="overlap-3">
-              <img class="line" src="../static/img/line.svg" />
-              <div class="AR-VR-jpg"><img class="img" src="../static/img/ar-vr-1.png" /></div>
-              <img class="map-jpg" src="../static/img/map-jpg.svg" />
-              <div class="donate-jpg"><img class="donate" src="../static/img/donate.png" /></div>
-              <div class="chat-jpg"><img class="chat" src="../static/img/chat.png" /></div>
-              <img class="vector-2" src="../static/img/vector-1.svg" />
+              <img class="line" src="static/img/line.svg" />
+              <div class="AR-VR-jpg"><img class="img" src="static/img/ar-vr-1.png" /></div>
+              <img class="map-jpg" src="static/img/map-jpg.svg" />
+              <div class="donate-jpg"><img class="donate" src="static/img/donate.png" /></div>
+              <div class="chat-jpg"><img class="chat" src="static/img/chat.png" /></div>
+              <img class="vector-2" src="static/img/vector-1.svg" />
               <div class="flexcontainer-i">
                 <p class="text-i">
                   <span class="span">破鏡寵緣<br /></span>
                 </p>
                 <p class="text-i"><span class="span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;讓愛延續</span></p>
               </div>
-              <img class="logo" src="../static/img/logo-1.png" />
+              <img class="logo" src="static/img/logo-1.png" />
             </div>
 
             <form method="POST" enctype="multipart/form-data">
                 <div class="group">
                     <div class="overlap-4">
                         <div class="text-wrapper-7">動物走失尋找</div>
-
-                        <div class="pic"><img  src="../static/img/44444.jpg" /></div>
-
-                        <p class="overlap-group-2">我們正在尋找我們走失的阿金，<br>
-                          牠於 2024-11-02 在台大附近失蹤，牠是一隻不怕生的寵物。<br>
-                          懇請大家幫忙留意，如有看到牠的蹤影，請撥打0966933607<br>
-                          您的幫助能讓牠早日回家，非常感謝！
-                        </p>
+                        {% if photo_url %}
+                        <img src="{{ photo_url }}" class="img2">
+                        {% else %}
+                        <p>尚未上傳圖片</p>
+                        {% endif %}
+                        <p class="overlap-group-2">{{ ad_content |replace('\n', '<br>')|safe}}</p>
                     </div>
                 </div>
              </form>
@@ -80,7 +79,7 @@
             <div class="view-5"><div class="text-wrapper-6">寵物地圖</div></div>
             <div class="view-6"><div class="text-wrapper-6">聊天室</div></div>
           </div>
-          <img class="user-jpg" src="../static/img/user-jpg.svg" />
+          <img class="user-jpg" src="static/img/user-jpg.svg" />
           <div class="view-7"><div class="text-wrapper-6">個人資訊</div></div>
         </div>
       </div>

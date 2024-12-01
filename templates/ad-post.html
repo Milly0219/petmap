@@ -1,24 +1,28 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <title>AI文案生成</title>
+    <link href="../static/css/ad-post.css" rel="stylesheet">
+    <link href="../static/css/nav.css" rel="stylesheet">    
     <link rel="stylesheet" href="../static/css/globals.css" />
     <link rel="stylesheet" href="../static/css/styleguide.css" />
-    <link rel="stylesheet" href="../static/css/ad-post.css" />
-    <script>
-    </script>
+  
   </head>
   <body>
+  
     <div class="ad-post">
       <div class="div">
         <div class="overlap">
-          <img class="shape" src="../static/img/shape-2.png" />
+          <img class="shape" src="static/img/shape-2.png" />
           <footer class="footer">
             <p class="text-wrapper">Copyright © 破鏡寵緣 讓愛延續 2024. All rights reserved.</p>
             <div class="overlap-group">
               <div class="text-wrapper-2">rekindlepetlove@gmail.com</div>
-              <img class="mail" src="../static/img/mail-1.svg" />
+              <img class="mail" src="static/img/mail-1.svg" />
             </div>
+      <header>
             <div class="AR-VR"><div class="text-wrapper-3">AR/VR</div></div>
             <div class="AR-VR-wrapper"><div class="text-wrapper-3">寵物配對</div></div>
             <div class="view"><div class="text-wrapper-3">會員登入</div></div>
@@ -35,20 +39,21 @@
                 </p>
                 <p class="text-i"><span class="span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;讓愛延續</span></p>
               </div>
-              <img class="logo" src="../static/img/logo-1.png" />
+              <img class="logo" src="static/img/logo-1.png" />
             </div>
-            <img class="vector" src="../static/img/vector-6.svg" />
+            <img class="vector" src="static/img/vector-6.svg" />
           </footer>
         </div>
+      </header>
 
+      <form id="petForm" action="/templates" method="POST" enctype="multipart/form-data">
         <div class="overlap-3">
           <div class="overlap-wrapper">
             <div class="overlap-4"><div class="text-wrapper-5">AI文案生成</div></div>
           </div>
-          <img class="pet-supplies" src="../static/img/pet-supplies-3.png" />
-          <img class="footprint" src="../static/img/footprint-3.png" />
-
-        <form action="/templates" method="POST" enctype="multipart/form-data" id="templates">
+          <img class="pet-supplies" src="static/img/pet-supplies-3.png" />
+          <img class="footprint" src="static/img/footprint-3.png" />
+        
           <div class="inputs-name">
             <div class="text-field">
               <div class="state-layer">
@@ -61,7 +66,7 @@
           <div class="text-field-wrapper">
             <div class="text-field">
               <div class="state-layer">
-                <div class="content"><input class="label-text" placeholder="date" type="date" id="lost_time" name="lost_date" required></div>
+                <div class="content"><input class="label-text" placeholder="date" type="date" id="lost_date" name="lost_date" required></div>
               </div>
             </div>
           </div>
@@ -69,7 +74,7 @@
           <div class="inputs-name-2">
             <div class="text-field">
               <div class="state-layer">
-                <div class="content"><input class="label-text" placeholder="place" type="text" id="lost_place" name="lost_location" required /></div>
+                <div class="content"><input class="label-text" placeholder="place" type="text" id="lost_location" name="lost_location" required /></div>
               </div>
             </div>
           </div>
@@ -77,7 +82,7 @@
           <div class="inputs-name-3">
             <div class="text-field">
               <div class="state-layer">
-                <div class="content"><input class="label-text" placeholder="feature" type="text" id="feature" name="features" required /></div>
+                <div class="content"><input class="label-text" placeholder="feature" type="text" id="features" name="features" required /></div>
               </div>
             </div>
           </div>
@@ -85,13 +90,13 @@
           <div class="inputs-name-4">
             <div class="text-field">
               <div class="state-layer">
-                <div class="content"><input class="label-text" placeholder="phone" type="text" id="telphone" name="contact_phone" required /></div>
+                <div class="content"><input class="label-text" placeholder="phone" type="text" id="contact_phone" name="contact_phone" required /></div>
               </div>
             </div>
           </div>
           <p class="AI">
             <span class="text-wrapper-10">以</span>
-            <span class="text-wrapper-11">生成式AI生成廣告文案</span>
+            <span class="text-wrapper-10">生成式AI生成廣告文案</span>
             <span class="text-wrapper-10"
               >的方式推播，<br />幫助走失及需要救援的寵物或流浪動物，將消息第一時間推廣給大眾，幫助牠們找回溫暖的家</span
             >
@@ -101,38 +106,45 @@
               <div class="overlap-group-2">
                 <div class="view-4"></div>
                 <button type="submit"><div class="text-wrapper-12">下一頁</div>
-                <img class="dog" src="../static/img/dog-1-1.png" /></button>
+                  <img class="dog" src="static/img/dog-1-1.png"/>
+                </button>
+
+
               </div>
             </div>
           </div>
-          <div class="overlap-5"><input class="text-wrapper-13" type="file" name="picture" id="picture" accept="image/*"></div></form>
+            
           <div class="text-wrapper-14">聯絡電話</div>
+
+          <div class="overlap-5">
+            <input class="text-wrapper-13" type="file" name="photo_url" id="photo_url" accept="image/*">{{ photo_url }}
+          </div>
         </div>
 
     </form> 
         <div class="nav">
           <div class="overlap-6">
             <div class="overlap-7">
-              <img class="line" src="../static/img/line-1.svg" />
-              <div class="AR-VR-jpg"><img class="img" src="../static/img/ar-vr-1.png" /></div>
-              <img class="map-jpg" src="../static/img/map-jpg-1.svg" />
-              <div class="donate-jpg"><img class="donate" src="../static/img/donate-1.png" /></div>
-              <div class="chat-jpg"><img class="chat" src="../static/img/chat-1.png" /></div>
-              <img class="vector-2" src="../static/img/vector-1-1.svg" />
+              <img class="line" src="static/img/line-1.svg" />
+              <div class="AR-VR-jpg"><img class="img" src="static/img/ar-vr-1.png" /></div>
+              <img class="map-jpg" src="static/img/map-jpg-1.svg" />
+              <div class="donate-jpg"><img class="donate" src="static/img/donate-1.png" /></div>
+              <div class="chat-jpg"><img class="chat" src="static/img/chat-1.png" /></div>
+              <img class="vector-2" src="static/img/vector-1-1.svg" />
               <div class="flexcontainer-i">
                 <p class="text-i">
                   <span class="span">破鏡寵緣<br /></span>
                 </p>
                 <p class="text-i"><span class="span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;讓愛延續</span></p>
               </div>
-              <img class="logo" src="../static/img/logo-1.png" />
+              <img class="logo" src="static/img/logo-1.png" />
             </div>
             <div class="AR-VR-2"><div class="text-wrapper-15">AR/VR</div></div>
             <div class="view-5"><div class="text-wrapper-15">捐款</div></div>
             <div class="view-6"><div class="text-wrapper-15">寵物地圖</div></div>
             <div class="view-7"><div class="text-wrapper-15">聊天室</div></div>
           </div>
-          <img class="user-jpg" src="../static/img/user-jpg-1.svg" />
+          <img class="user-jpg" src="static/img/user-jpg-1.svg" />
           <div class="view-8"><div class="text-wrapper-15">個人資訊</div></div>
         </div>
       </div>

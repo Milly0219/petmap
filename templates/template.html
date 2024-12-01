@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../static/css/globals.css" />
@@ -38,28 +38,32 @@
             </div>
             <img class="vector" src="../static/img/vector-6.svg" />
           </footer>
-          <a href="/">
-          <div class="member-button-wrapper">
-            <div class="member-button">
-              <div class="text-wrapper-5">送出</div>
-              <img class="dog" src="../static/img/dog-1-1.png" />
-            </div>
-          </div>
-        </a>
-        </div>
-        <div class="overlap-wrapper">
+
+        <form action="/nodify" method="POST" enctype="multipart/form-data">    
+          <div class="group">
+              <div class="overlap-4">
+                <div class="text-wrapper-5">確認內容</div>
+
+                  <div class="text-wrapper-7">動物走失尋找</div>
+                  
+                  {% if photo_url %}
+                  <img src="{{ photo_url }}" class="img2">
+                  {% else %}
+                  <p>尚未上傳圖片</p>
+                  {% endif %}
+                
+                <textarea class="overlap-group-2" id="ad_content" name="ad_content">{{ ad_content }}</textarea>
+         <div class="overlap-wrapper">
           <div class="overlap-3">
             <div class="view-4"></div>
-            <div class="text-wrapper-6">確認內容</div>
+              <button type="submit"><div class="text-wrapper-6">送出</div>
+              <img class="dog" src="../static/img/dog-1-1.png">
+            </div>
+            </button>
           </div>
-        </div>
-        <div class="group">
-          <div class="overlap-4">
-            <div class="text-wrapper-7">動物走失</div>
-            <div class="overlap-group-2"><div class="text-wrapper-8">文案</div></div>
-            <div class="overlap-5"><div class="text-wrapper-9">照片</div></div>
+        </div>    
           </div>
-        </div>
+       </form>
         <div class="nav">
           <div class="overlap-6">
             <div class="overlap-7">
@@ -78,7 +82,7 @@
               <img class="logo" src="../static/img/logo-1.png" />
             </div>
             <div class="AR-VR-2"><div class="text-wrapper-10">AR/VR</div></div>
-            <div class="view-5"><div class="text-wrapper-11">捐款</div></div>
+            <div class="view-5"><div class="text-wrapper-10">捐款</div></div>
             <div class="view-6"><div class="text-wrapper-10">寵物地圖</div></div>
             <div class="view-7"><div class="text-wrapper-10">聊天室</div></div>
           </div>

@@ -555,18 +555,18 @@
   top: 506px;
   left: 132px;
   background-color: #fff2e0;
+  overflow: hidden ;
 }
 
 .ad-post .text-wrapper-13 {
   position: absolute;
   top: 129px;
-  left: 94px;
+  left: 70px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #907c76;
-  font-size: 24px;
+  font-size: 15px;
   letter-spacing: 3px;
-  line-height: normal;
 }
 
 .ad-post .text-wrapper-14 {
